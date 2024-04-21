@@ -1,0 +1,17 @@
+services:
+#  postgres:
+#    image: postgres
+#    environment:
+#      POSTGRES_DB: "shuttle"
+#      POSTGRES_USER: "postgres"
+#      POSTGRES_PASSWORD: "password"
+#    ports:
+#      - "5432:5432"
+    postgres-java-learn:
+          image: postgres
+          environment:
+            POSTGRES_DB: "java_learn"
+            POSTGRES_USER: "postgres"
+            POSTGRES_PASSWORD: "password"
+          ports:
+            - "5432:5432"

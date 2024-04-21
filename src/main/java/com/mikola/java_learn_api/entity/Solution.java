@@ -26,15 +26,12 @@ public class Solution {
     @NotNull(message = "Задача не может быть пустой")
     private Task task;
 
-    @Lob
+
     @NotNull(message = "Код решения не может быть пустым")
-    @Column(columnDefinition = "TEXT")
     private String code;
 
     private boolean isCorrect;
 
-    @Lob
-    @Column(columnDefinition = "TEXT")
     private String feedback;
 
     @NotNull
