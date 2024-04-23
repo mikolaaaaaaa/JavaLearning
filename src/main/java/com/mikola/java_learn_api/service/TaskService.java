@@ -26,6 +26,10 @@ public class TaskService {
 
     }
 
+    public Task getTaskByTitle(String title) {
+        return taskRepository.findTaskByTitle(title).orElseThrow(() -> new NotFoundException(""));
+    }
+
     public Task addTask(TaskDto taskDTO) {
         return taskRepository.save(taskMapper.toEntity(taskDTO));
     }

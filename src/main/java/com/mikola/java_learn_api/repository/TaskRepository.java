@@ -4,7 +4,9 @@ import com.mikola.java_learn_api.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    // Дополнительные методы могут быть добавлены по мере необходимости
+    Optional<Task> findTaskByTitle(String title);
 }
