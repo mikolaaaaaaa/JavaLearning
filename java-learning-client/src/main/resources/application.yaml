@@ -5,3 +5,12 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: basic
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  cloud:
+    openfeign:
+      okhttp:
+        enabled: true

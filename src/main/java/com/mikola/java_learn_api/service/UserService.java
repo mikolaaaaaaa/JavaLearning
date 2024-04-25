@@ -34,5 +34,15 @@ public class UserService {
     public void deleteUser(Long userId) {
         userRepository.deleteById(userId);
     }
+
+    public User updateUser(UserDto updatedUserDto) {
+        Optional<User> userOptional = userRepository.findById(updatedUserDto.getId());
+        User user = userOptional.orElseThrow(() -> new NotFoundException("User with ID " + updatedUserDto.getId() + " not found"));
+
+        user.setName(updatedUserDto.getName());
+        user.setEmail(updatedUserDto.getEmail());
+
+        return userRepository.save(user);
+    }
 }
 

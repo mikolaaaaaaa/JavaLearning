@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${task.title}"></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            color: #333;
+            text-align: center; /* Выравнивание заголовка по центру */
+        }
+        .task-info {
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .task-info textarea {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+        .task-info button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .task-info button:hover {
+            background-color: #45a049;
+        }
+        .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            margin: auto;
+            display: none; /* Скрыть по умолчанию */
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .result {
+            margin-top: 20px;
+            display: none; /* Скрыть по умолчанию */
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${task.title}"></h1>
+<div class="task-info">
+    <p><span th:text="${task.description}"/></p>
+    <form id="taskForm" th:action="@{/tasks/submit}" method="post" onsubmit="submitForm(event)">
+        <textarea name="code" th:text="${task.initialCode}"></textarea>
+        <button type="submit">Отправить на проверку</button>
+    </form>
+</div>
+</body>
+</html>

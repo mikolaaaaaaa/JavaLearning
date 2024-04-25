@@ -36,11 +36,52 @@
     </style>
 </head>
 <body>
+<div th:include="header.html"></div>
+<main>
+    <div id="content">
 <h1>Список доступных задач</h1>
 <ul>
     <li th:each="task : ${tasks}">
-        <a th:href="@{'/task/' + ${task.title}}"><span th:text="${task.title}"></span></a>
+        <a th:href="@{'/tasks/' + ${task.taskId}}"><span th:text="${task.title}"></span></a>
     </li>
 </ul>
+    </div>
+</main>
+
+<nav id="nav">
+    <div class="innertube">
+        <h3>Боковое меню</h3>
+        <!--            <ul>-->
+        <!--                <li><a href="#">Link 1</a></li>-->
+        <!--                <li><a href="#">Link 2</a></li>-->
+        <!--                <li><a href="#">Link 3</a></li>-->
+        <!--                <li><a href="#">Link 4</a></li>-->
+        <!--                <li><a href="#">Link 5</a></li>-->
+        <!--            </ul>-->
+        <!--            <h3>Left heading</h3>-->
+        <!--            <ul>-->
+        <!--                <li><a href="#">Link 1</a></li>-->
+        <!--                <li><a href="#">Link 2</a></li>-->
+        <!--                <li><a href="#">Link 3</a></li>-->
+        <!--                <li><a href="#">Link 4</a></li>-->
+        <!--                <li><a href="#">Link 5</a></li>-->
+        <!--            </ul>-->
+        <!--            <h3>Left heading</h3>-->
+        <!--            <ul>-->
+        <!--                <li><a href="#">Link 1</a></li>-->
+        <!--                <li><a href="#">Link 2</a></li>-->
+        <!--                <li><a href="#">Link 3</a></li>-->
+        <!--                <li><a href="#">Link 4</a></li>-->
+        <!--                <li><a href="#">Link 5</a></li>-->
+        <!--            </ul>-->
+    </div>
+</nav>
+
+<footer id="footer">
+    <div class="innertube">
+        <p>Java Learn Inc.</p>
+    </div>
+</footer>
+
 </body>
 </html>

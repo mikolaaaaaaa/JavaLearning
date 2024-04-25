@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .user-info {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .user-info p {
+            margin-bottom: 10px;
+        }
+
+        .edit-form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .edit-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .edit-form input {
+            width: calc(100% - 10px);
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .edit-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .edit-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<extended id=""
+<div class="container">
+    <h1>User Info</h1>
+    <div class="user-info">
+        <p><strong>Name:</strong> <span th:text="${user.name}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+        <button onclick="showEditForm()">Редактировать</button>
+    </div>
+    <form class="edit-form" th:action="@{/users}" th:object="${user}" th:method="patch">
+        <input type="hidden" th:field="*{id}"/>
+        <label for="name">Name:</label>
+        <input id="name" type="text" th:field="*{name}" placeholder="Имя пользователя"/>
+        <label for="email">Email:</label>
+        <input id="email" type="email" th:field="*{email}" placeholder="Email"/>
+        <button type="submit">Сохранить</button>
+    </form>
+</div>
+
+<script>
+    function showEditForm() {
+        var editForm = document.querySelector(".edit-form");
+        editForm.style.display = "block";
+    }
+</script>
+</body>
+</html>

@@ -13,9 +13,12 @@ public class TaskService {
 
     private final TaskFeignClient taskFeignClient;
 
-
-
     public List<TaskDto> getAllTasks() {
         return taskFeignClient.getTasks();
     }
+
+    public TaskDto getTaskById(Long taskId) {
+        return taskFeignClient.getTaskById(taskId);
+    }
+
 }
