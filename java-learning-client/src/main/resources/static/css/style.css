@@ -1,0 +1,146 @@
+/*body {*/
+/*    margin:0;*/
+/*    padding:0;*/
+/*    font-family: Sans-Serif, serif;*/
+/*    line-height: 1.5em;*/
+/*}*/
+
+/*#header {*/
+/*    background: #ccc;*/
+/*    height: 100px;*/
+/*}*/
+
+/*#header h1 {*/
+/*    margin: 0;*/
+/*    padding-top: 15px;*/
+/*}*/
+
+/*main {*/
+/*    padding-bottom: 10010px;*/
+/*    margin-bottom: -10000px;*/
+/*    float: left;*/
+/*    width: 100%;*/
+/*}*/
+
+/*#nav {*/
+/*    padding-bottom: 10010px;*/
+/*    margin-bottom: -10000px;*/
+/*    float: left;*/
+/*    width: 230px;*/
+/*    margin-left: -100%;*/
+/*    background: #eee;*/
+/*}*/
+
+/*#footer {*/
+/*    position: fixed;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    background: #ccc;*/
+/*    text-align: center;*/
+/*    padding: 10px 0;*/
+/*}*/
+
+/*#wrapper {*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*#content {*/
+/*    margin-left: 230px; !* Same as 'nav' width *!*/
+/*}*/
+
+/*.innertube {*/
+/*    !* Padding for content *!*/
+/*    margin: 0 15px 15px;*/
+/*}*/
+
+/*p {*/
+/*    color: #555;*/
+/*}*/
+
+/*nav ul {*/
+/*    list-style-type: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*nav ul a {*/
+/*    color: darkgreen;*/
+/*    text-decoration: none;*/
+/*}*/
+/**/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Sans-Serif, serif;
+    line-height: 1.5em;
+}
+
+#header {
+    background: #494949; /* Фиолетовый цвет */
+    border-bottom: 2px solid white; /* Белая обводка снизу */
+    height: 100px;
+}
+
+#header h1 {
+    margin: 0;
+    padding-top: 15px;
+    color: white; /* Белый цвет текста */
+}
+
+main {
+    padding-bottom: 10010px;
+    margin-bottom: -10000px;
+    float: left;
+    width: 100%;
+}
+
+#nav {
+    padding-bottom: 10010px;
+    margin-bottom: -10000px;
+    float: left;
+    width: 230px;
+    margin-left: -100%;
+    background: #6c6b6b;
+    border-bottom: 2px solid white;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #494949; /* Фиолетовый цвет */
+    border-top: 2px solid white; /* Белая обводка сверху */
+    text-align: center;
+    padding: 10px 0;
+}
+
+#wrapper {
+    overflow: hidden;
+}
+
+#content {
+    margin-left: 230px; /* Same as 'nav' width */
+}
+
+.innertube {
+    /* Padding for content */
+    margin: 0 15px 15px;
+}
+
+p {
+    color: #555;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul a {
+    color: darkgreen;
+    text-decoration: none;
+}
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+<!--    <link th:href="@{/style.css}" rel="stylesheet" />-->
+    <style>
+        .login-container {
+            width: 500px;
+            height: 200px;
+            padding: 20px;
+            border-radius: 10px; /* Закругляем углы блока */
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 20px; /* Закругляем углы полей ввода и кнопки */
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            border: none;
+            background-color: #363738;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #363738;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="~{header.html}"></div>
+<main>
+    <div id="content">
+        <div class="login-container">
+            <h2>Авторизация</h2>
+            <form th:action="@{/login}" method="post">
+                <label>
+<!--                    Email-->
+                    <input type="text" id="username" name="username" placeholder="Email" required>
+                </label><br>
+                <label>
+<!--                    Пароль-->
+                    <input type="password" id="password" name="password" placeholder="Пароль" required>
+                </label><br>
+                <input type="submit" value="Войти">
+            </form>
+        </div>
+    </div>
+</main>
+<div th:insert="~{footer.html}"></div>
+</body>
+</html>

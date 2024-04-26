@@ -29,4 +29,5 @@ public class UserController {
         model.addAttribute("user", updatedUserDto);
         return "user"; // Перенаправляем на страницу с информацией о пользователе
     }
+
 }
