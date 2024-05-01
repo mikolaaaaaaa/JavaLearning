@@ -3,15 +3,15 @@ package com.mikola.javalearningclient.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @RequiredArgsConstructor
 public class LoginController {
-    @GetMapping("/login")
-    public String login() {
-        return "login"; // Перенаправляем на домашнюю страницу
-    }
+//    @GetMapping("/login")
+//    public String login(HttpServletRequest request) {
+//        System.out.println("hello from /login: " + request);
+//        return "login"; // Перенаправляем на домашнюю страницу
+//    }
 
 //    @PostMapping("/doLogin")
 //    public String login(@RequestParam("username") String username,
@@ -23,4 +23,11 @@ public class LoginController {
 //
 //        return "redirect:/tasks"; // Перенаправляем на домашнюю страницу
 //    }
+//@GetMapping("/loginSuccess")
+//public String loginSuccess(HttpServletRequest request) {
+//    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//    HttpSession session = request.getSession();
+//    session.setAttribute("username", auth.getName()); // Пример сохранения имени пользователя в сессии
+//    return "redirect:/tasks"; // Перенаправление на страницу после успешной аутентификации
+//}
 }

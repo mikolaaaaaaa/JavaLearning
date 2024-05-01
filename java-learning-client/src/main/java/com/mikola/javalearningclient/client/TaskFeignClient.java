@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "task-service", url = "http://localhost:8081/api/v1") // указываем имя сервиса и URL
+@FeignClient(name = "task-service", url = "http://localhost:8081/api/v1/tasks")
 public interface TaskFeignClient {
 
-    @GetMapping("/tasks") // указываем метод запроса и путь
+    @GetMapping()
     List<TaskDto> getTasks();
 
-    @GetMapping("/tasks/{taskId}")
+    @GetMapping("/{taskId}")
     TaskDto getTaskById(@PathVariable("taskId") Long taskId);
 
 }

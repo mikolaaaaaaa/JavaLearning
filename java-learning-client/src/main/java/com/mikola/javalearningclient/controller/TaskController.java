@@ -15,7 +15,6 @@ public class TaskController {
 
     @GetMapping
     public String getTask(Model model) {
-        model.addAttribute("something", "this is come from controller");
         model.addAttribute("tasks", taskService.getAllTasks());
         return "tasks";
     }

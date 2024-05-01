@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
-<!--    <link th:href="@{/style.css}" rel="stylesheet" />-->
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
     <style>
         .login-container {
             width: 500px;
@@ -64,6 +64,9 @@
                 </label><br>
                 <input type="submit" value="Войти">
             </form>
+            <div th:if="${param.error != null}">
+                <p style="color: red" th:text="${'Неверный логин либо пароль'}" th:unless="${param.error == null}"></p>
+            </div>
         </div>
     </div>
 </main>

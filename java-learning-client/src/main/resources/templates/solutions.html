@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Список доступных задач</title>
+    <title>Список решений</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,12 +39,12 @@
 <div th:insert="~{header.html}"></div>
 <main>
     <div id="content">
-<h1>Список доступных задач</h1>
-<ul>
-    <li th:each="task : ${tasks}">
-        <a th:href="@{'/tasks/' + ${task.taskId}}"><span th:text="${task.title}"></span></a>
-    </li>
-</ul>
+        <h1>Список решений</h1>
+        <ul>
+            <li th:each="solution : ${solutions}">
+                <a th:href="@{'/solutions/' + ${solution.solutionId}}"><span th:text="${solution.getTask().getTitle()}"></span></a>
+            </li>
+        </ul>
     </div>
 </main>
 

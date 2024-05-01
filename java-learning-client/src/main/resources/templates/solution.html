@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Solution Details</title>
+    <style>
+        h1 {
+            color: #333;
+            text-align: center; /* Выравнивание заголовка по центру */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .solution-details {
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .solution-details p {
+            margin-bottom: 10px;
+        }
+
+        .solution-details pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="~{header.html}"></div>
+
+<main>
+    <div id="content">
+        <h1 th:text="${solution.getTask().getTitle}"></h1>
+        <div class="solution-details">
+            <p><strong>Описание:</strong><br/><span th:text="${solution.task.description}"></span></p>
+            <p><strong>Код решения:</strong></p>
+            <pre><code th:text="${solution.code}"></code></pre>
+            <p><strong>Решено:</strong> <span th:text="${solution.isCorrect} ? 'Да' : 'Нет'"></span></p>
+            <p><strong>Отзыв о коде:</strong></p>
+            <pre><code th:text="${solution.feedback}"/></pre>
+            <p><strong>Время отправки:</strong> <span th:text="${solution.submissionTimestamp}"></span></p>
+        </div>
+    </div>
+</main>
+
+<nav id="nav">
+    <div class="innertube">
+        <h3>Боковое меню</h3>
+    </div>
+</nav>
+
+<div th:insert="~{footer.html}"></div>
+</body>
+</html>

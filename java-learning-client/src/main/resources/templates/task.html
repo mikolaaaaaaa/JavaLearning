@@ -74,7 +74,7 @@
     </style>
 </head>
 <body>
-<div th:include="header.html"></div>
+<div th:insert="~{header.html}"></div>
 
 <main>
     <div id="content">
@@ -95,6 +95,6 @@
     </div>
 </nav>
 
-<div th:include="footer.html"></div>
+<div th:insert="~{footer.html}"></div>
 </body>
 </html>

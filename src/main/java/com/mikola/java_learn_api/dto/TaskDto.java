@@ -15,6 +15,5 @@ public class TaskDto {
     private String description;
     private String initialCode;
 
-    // геттеры и сеттеры
 }
 

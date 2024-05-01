@@ -22,7 +22,6 @@ public class SolutionDto {
     private String feedback;
     private LocalDateTime submissionTimestamp;
 
-    // геттеры и сеттеры
 }
 
 
