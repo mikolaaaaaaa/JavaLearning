@@ -12,6 +12,6 @@ public class MockChatGptClient {
             "Вместо циклов можно воспользоваться методами Arrays.stream для нахождения минимального, максимального и среднего значений.";
 
     public static String executeQuery(String prompt) {
-       return FEEDBACK;
+        return FEEDBACK;
     }
 }

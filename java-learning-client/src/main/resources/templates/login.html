@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <style>
         .login-container {
             width: 500px;
@@ -19,6 +19,10 @@
         }
 
 
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
         h2 {
             margin-top: 0;
             text-align: center;
@@ -53,14 +57,14 @@
     <div id="content">
         <div class="login-container">
             <h2>Авторизация</h2>
-            <form th:action="@{/login}" method="post">
+            <form method="post" th:action="@{/login}">
                 <label>
-<!--                    Email-->
-                    <input type="text" id="username" name="username" placeholder="Email" required>
+                    <!--                    Email-->
+                    <input id="username" name="username" placeholder="Email" required type="text">
                 </label><br>
                 <label>
-<!--                    Пароль-->
-                    <input type="password" id="password" name="password" placeholder="Пароль" required>
+                    <!--                    Пароль-->
+                    <input id="password" name="password" placeholder="Пароль" required type="password">
                 </label><br>
                 <input type="submit" value="Войти">
             </form>

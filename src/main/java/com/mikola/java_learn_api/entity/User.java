@@ -15,11 +15,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-   // @NotBlank(message = "Имя пользователя не может быть пустым")
+    // @NotBlank(message = "Имя пользователя не может быть пустым")
     @Size(max = 255, message = "Имя пользователя не может превышать 255 символов")
     private String name;
 
-  //  @NotBlank(message = "Email не может быть пустым")
+    //  @NotBlank(message = "Email не может быть пустым")
     @Size(max = 255, message = "Email не может превышать 255 символов")
     @Column(unique = true)
     private String email;

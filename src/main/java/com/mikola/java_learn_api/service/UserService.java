@@ -27,6 +27,13 @@ public class UserService {
                 .orElseThrow(() -> new NotFoundException("User with ID " + userId + " not found"));
     }
 
+    public User getUserByEmail(String email) {
+        return Optional.ofNullable(userRepository.getUserByEmail(email)).orElseThrow(
+                () -> new NotFoundException("User with Email " + email + " not found")
+        );
+    }
+
+
     public User addUser(UserDto userDto) {
         return userRepository.save(userMapper.toEntity(userDto));
     }

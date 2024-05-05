@@ -14,20 +14,24 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/profile")
+    public String getProfile(Model model) {
+        model.addAttribute("user", userService.getCurrentUser());
+        return "user";
+    }
+
     @GetMapping("/{userId}")
     public String getUser(@PathVariable Long userId, Model model) {
-        UserDto userDto = userService.getUserById(userId);
-        System.out.println("User from get: " + userDto);
+        var userDto = userService.getUserById(userId);
         model.addAttribute("user", userDto);
         return "user";
     }
 
-    @PatchMapping()
+    @PostMapping("")
     public String updateUser(@ModelAttribute UserDto updatedUserDto, Model model) {
-        System.out.println(updatedUserDto);
         userService.updateUser(updatedUserDto);
         model.addAttribute("user", updatedUserDto);
-        return "user"; // Перенаправляем на страницу с информацией о пользователе
+        return "user";
     }
 
 }

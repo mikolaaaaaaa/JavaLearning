@@ -27,6 +27,10 @@ public class SolutionService {
         solutionRepository.save(solutionMapper.toEntity(solution));
     }
 
+    public List<Solution> getAllByUserId(Long userId) {
+        return solutionRepository.findAllByUserId(userId);
+    }
+
     public List<Solution> getAllSolutions() {
         return solutionRepository.findAll();
     }

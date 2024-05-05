@@ -26,6 +26,14 @@ public class SolutionController {
                 .toList();
     }
 
+    @GetMapping("/user/{userId}")
+    public List<SolutionDto> getSolutionByUserId(@PathVariable Long userId) {
+        return solutionService.getAllByUserId(userId)
+                .stream()
+                .map(solutionMapper::toDto)
+                .toList();
+    }
+
     @GetMapping("/{solutionId}")
     public SolutionDto getSolutionById(@PathVariable Long solutionId) {
         return solutionMapper.toDto(solutionService.getSolutionById(solutionId));
@@ -46,6 +54,6 @@ public class SolutionController {
     @PostMapping("/check/{solutionId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void checkSolution(@PathVariable Long solutionId) {
-         solutionService.checkSolution(solutionId);
+        solutionService.checkSolution(solutionId);
     }
 }

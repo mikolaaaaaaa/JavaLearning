@@ -2,9 +2,9 @@
 <!-- Template by html.am -->
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>2 Column Layout &mdash; Left Menu with Header &amp; Footer</title>
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 
 <body>
@@ -12,6 +12,11 @@
 <header id="header">
     <div class="innertube">
         <h1>Java Learn</h1>
+        <a class="logout" href="javascript: document.logoutForm.submit()" role="menuitem"> <img class="logout" th:src="@{~/img/logout.png}" alt="Logout"></a>
+
+        <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+            <input hidden type="submit" value="Sign Out"/>
+        </form>
     </div>
 </header>
 

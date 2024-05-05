@@ -66,6 +66,18 @@
                 transform: rotate(360deg);
             }
         }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
 
         .result {
             margin-top: 20px;
@@ -80,20 +92,24 @@
     <div id="content">
         <h1 th:text="${task.title}"></h1>
         <div class="task-info">
+<!--            <p><span th:text="${task.description}"/></p>-->
+<!--            <form id="taskForm" th:method="post" onsubmit="submitForm(event)" th:object="" th:action="@{/tasks/submit}">-->
+<!--                <textarea name="code" th:text="${'Введите код решения'}"></textarea>-->
+<!--                <button type="submit">Отправить на проверку</button>-->
+<!--            </form>-->
             <p><span th:text="${task.description}"/></p>
-            <form id="taskForm" th:action="@{/tasks/submit}" method="post" onsubmit="submitForm(event)">
-                <textarea name="code" th:text="${task.initialCode}"></textarea>
+            <form class="edit-form" th:action="@{/tasks/submit}" th:method="post" th:object="${task}">
+                <input th:field="*{taskId}" type="hidden"/>
+                <input th:field="*{title}" type="hidden"/>
+                <input th:field="*{description}" type="hidden">
+                <textarea th:field="*{initialCode}" name="code" th:text="${'Введите код решения'}"></textarea>
                 <button type="submit">Отправить на проверку</button>
             </form>
         </div>
     </div>
 </main>
 
-<nav id="nav">
-    <div class="innertube">
-        <h3>Боковое меню</h3>
-    </div>
-</nav>
+<div th:insert="~{menu.html}"></div>
 
 <div th:insert="~{footer.html}"></div>
 </body>

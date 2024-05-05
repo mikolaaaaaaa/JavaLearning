@@ -140,7 +140,15 @@ nav ul {
 }
 
 nav ul a {
-    color: darkgreen;
+    color: #3b3b3b;
     text-decoration: none;
+}
+
+.logout {
+    /*background-color: lightblue;*/
+    height: 30px;
+    text-align: right;
+    right: 40px;
+    position: fixed
 }
 

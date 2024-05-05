@@ -32,7 +32,7 @@ public class TaskController {
     }
 
     @GetMapping("/task")
-    public TaskDto getTaskByTitle(@RequestParam(value="title") String title) {
+    public TaskDto getTaskByTitle(@RequestParam(value = "title") String title) {
         return taskMapper.toDto(taskService.getTaskByTitle(title));
     }
 

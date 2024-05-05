@@ -7,5 +7,6 @@ import org.mapstruct.Mapper;
 @Mapper
 public interface SolutionMapper {
     SolutionDto toDto(Solution solution);
+
     Solution toEntity(SolutionDto solutionDto);
 }

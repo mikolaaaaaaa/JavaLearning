@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/users")
@@ -36,6 +35,11 @@ public class UserController {
     @GetMapping("/{userId}")
     public UserDto getUserById(@PathVariable Long userId) {
         return userMapper.toDto(userService.getUserById(userId));
+    }
+
+    @GetMapping("/email/{userEmail}")
+    public UserDto getUserById(@PathVariable String userEmail) {
+        return userMapper.toDto(userService.getUserByEmail(userEmail));
     }
 
     @PostMapping

@@ -8,14 +8,17 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+
         h1 {
             color: #333;
             text-align: center;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             background-color: #f4f4f4;
             border-radius: 5px;
@@ -23,13 +26,16 @@
             padding: 10px;
             transition: background-color 0.3s ease;
         }
+
         li:hover {
             background-color: #ddd;
         }
+
         a {
             text-decoration: none;
             color: #333;
         }
+
         a:hover {
             text-decoration: underline;
         }
@@ -39,43 +45,17 @@
 <div th:insert="~{header.html}"></div>
 <main>
     <div id="content">
-<h1>Список доступных задач</h1>
-<ul>
-    <li th:each="task : ${tasks}">
-        <a th:href="@{'/tasks/' + ${task.taskId}}"><span th:text="${task.title}"></span></a>
-    </li>
-</ul>
+        <h1>Список доступных задач</h1>
+        <ul>
+            <li th:each="task : ${tasks}">
+                <a th:href="@{'/tasks/' + ${task.taskId}}"><span th:text="${task.title}"></span></a>
+            </li>
+        </ul>
     </div>
 </main>
 
-<nav id="nav">
-    <div class="innertube">
-        <h3>Боковое меню</h3>
-        <!--            <ul>-->
-        <!--                <li><a href="#">Link 1</a></li>-->
-        <!--                <li><a href="#">Link 2</a></li>-->
-        <!--                <li><a href="#">Link 3</a></li>-->
-        <!--                <li><a href="#">Link 4</a></li>-->
-        <!--                <li><a href="#">Link 5</a></li>-->
-        <!--            </ul>-->
-        <!--            <h3>Left heading</h3>-->
-        <!--            <ul>-->
-        <!--                <li><a href="#">Link 1</a></li>-->
-        <!--                <li><a href="#">Link 2</a></li>-->
-        <!--                <li><a href="#">Link 3</a></li>-->
-        <!--                <li><a href="#">Link 4</a></li>-->
-        <!--                <li><a href="#">Link 5</a></li>-->
-        <!--            </ul>-->
-        <!--            <h3>Left heading</h3>-->
-        <!--            <ul>-->
-        <!--                <li><a href="#">Link 1</a></li>-->
-        <!--                <li><a href="#">Link 2</a></li>-->
-        <!--                <li><a href="#">Link 3</a></li>-->
-        <!--                <li><a href="#">Link 4</a></li>-->
-        <!--                <li><a href="#">Link 5</a></li>-->
-        <!--            </ul>-->
-    </div>
-</nav>
+
+<div th:insert="~{menu.html}"></div>
 
 <div th:insert="~{footer.html}"></div>
 

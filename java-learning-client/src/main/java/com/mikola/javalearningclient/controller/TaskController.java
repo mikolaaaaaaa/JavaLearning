@@ -1,5 +1,7 @@
 package com.mikola.javalearningclient.controller;
 
+import com.mikola.javalearningclient.dto.TaskDto;
+import com.mikola.javalearningclient.service.SolutionService;
 import com.mikola.javalearningclient.service.TaskService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -12,10 +14,12 @@ import org.springframework.web.bind.annotation.*;
 public class TaskController {
 
     private final TaskService taskService;
+    private final SolutionService solutionService;
 
     @GetMapping
     public String getTask(Model model) {
         model.addAttribute("tasks", taskService.getAllTasks());
+        System.out.println();
         return "tasks";
     }
 
@@ -26,11 +30,11 @@ public class TaskController {
     }
 
     @PostMapping("/submit")
-    public String submitTask(@RequestBody String code, Model model) {
-        // Здесь вы можете обработать отправленный код
-        // Например, передать его на проверку и получить результат
-        System.out.println("Received code: " + code);
+    public String submitTask(@ModelAttribute TaskDto taskDto, Model model) {
+        System.out.println("Received task: " + taskDto);
         model.addAttribute("chackResult", "test data");
-        return "success"; // Перенаправляем обратно на страницу задач
+        var solution = solutionService.addSolution(taskDto);
+        model.addAttribute("solution", solution);
+        return "redirect:/solutions/" + solution.getSolutionId();
     }
 }

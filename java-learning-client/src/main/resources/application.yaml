@@ -20,5 +20,5 @@ spring:
         enabled: true
   security:
     user:
-      name: 1
+      name: ivanov@example.com
       password: 1

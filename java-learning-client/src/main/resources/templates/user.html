@@ -64,26 +64,46 @@
         .edit-form button:hover {
             background-color: #45a049;
         }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>User Info</h1>
-    <div class="user-info">
-        <p><strong>Name:</strong> <span th:text="${user.name}"></span></p>
-        <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
-        <button onclick="showEditForm()">Редактировать</button>
+<div th:insert="~{header.html}"></div>
+<main>
+    <div id="content">
+        <div class="container">
+            <h1>Информация о пользователе</h1>
+            <div class="user-info">
+                <p><strong>Имя:</strong> <span th:text="${user.name}"></span></p>
+                <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+                <button onclick="showEditForm()">Редактировать</button>
+            </div>
+            <form class="edit-form" th:action="@{/users}" th:method="post" th:object="${user}">
+                <input th:field="*{id}" type="hidden"/>
+                <label for="name">Имя:</label>
+                <input id="name" placeholder="Имя пользователя" th:field="*{name}" type="text"/>
+                <label for="email">Email:</label>
+                <input id="email" placeholder="Email" th:field="*{email}" type="email"/>
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
     </div>
-    <form class="edit-form" th:action="@{/users}" th:object="${user}" th:method="patch">
-        <input type="hidden" th:field="*{id}"/>
-        <label for="name">Name:</label>
-        <input id="name" type="text" th:field="*{name}" placeholder="Имя пользователя"/>
-        <label for="email">Email:</label>
-        <input id="email" type="email" th:field="*{email}" placeholder="Email"/>
-        <button type="submit">Сохранить</button>
-    </form>
-</div>
+</main>
+<div th:insert="~{menu.html}"></div>
 
+<div th:insert="~{footer.html}"></div>
 <script>
     function showEditForm() {
         var editForm = document.querySelector(".edit-form");

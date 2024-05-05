@@ -8,14 +8,17 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+
         h1 {
             color: #333;
             text-align: center;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             background-color: #f4f4f4;
             border-radius: 5px;
@@ -23,15 +26,21 @@
             padding: 10px;
             transition: background-color 0.3s ease;
         }
+
         li:hover {
             background-color: #ddd;
         }
+
         a {
             text-decoration: none;
             color: #333;
         }
+
         a:hover {
             text-decoration: underline;
+        }
+        .delete-icon {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -42,42 +51,52 @@
         <h1>Список решений</h1>
         <ul>
             <li th:each="solution : ${solutions}">
-                <a th:href="@{'/solutions/' + ${solution.solutionId}}"><span th:text="${solution.getTask().getTitle()}"></span></a>
+                <a th:href="@{'/solutions/' + ${solution.solutionId}}"><span
+                        th:text="${solution.getTask().getTitle()}"></span></a>
+<!--                <a th:href="">-->
+                    <button type="submit" class="delete-icon" onclick="showConfirmForm()">&#128465;</button>
+<!--                </a>-->
             </li>
         </ul>
+        <div id="confirmModal" style="display: none;">
+            <div>Вы точно хотите удалить решение?</div>
+            <button onclick="deleteSolution()">Да</button>
+            <button onclick="closeModal()">Отмена</button>
+        </div>
     </div>
 </main>
 
-<nav id="nav">
-    <div class="innertube">
-        <h3>Боковое меню</h3>
-        <!--            <ul>-->
-        <!--                <li><a href="#">Link 1</a></li>-->
-        <!--                <li><a href="#">Link 2</a></li>-->
-        <!--                <li><a href="#">Link 3</a></li>-->
-        <!--                <li><a href="#">Link 4</a></li>-->
-        <!--                <li><a href="#">Link 5</a></li>-->
-        <!--            </ul>-->
-        <!--            <h3>Left heading</h3>-->
-        <!--            <ul>-->
-        <!--                <li><a href="#">Link 1</a></li>-->
-        <!--                <li><a href="#">Link 2</a></li>-->
-        <!--                <li><a href="#">Link 3</a></li>-->
-        <!--                <li><a href="#">Link 4</a></li>-->
-        <!--                <li><a href="#">Link 5</a></li>-->
-        <!--            </ul>-->
-        <!--            <h3>Left heading</h3>-->
-        <!--            <ul>-->
-        <!--                <li><a href="#">Link 1</a></li>-->
-        <!--                <li><a href="#">Link 2</a></li>-->
-        <!--                <li><a href="#">Link 3</a></li>-->
-        <!--                <li><a href="#">Link 4</a></li>-->
-        <!--                <li><a href="#">Link 5</a></li>-->
-        <!--            </ul>-->
-    </div>
-</nav>
+<div th:insert="~{menu.html}"></div>
 
 <div th:insert="~{footer.html}"></div>
+
+<script>
+
+    function showConfirmForm() {
+        var editForm = document.querySelector(".confirmModal");
+        editForm.style.display = "block";
+    }
+    function confirmDelete(solutionId) {
+        // Отображаем модальное окно
+        document.getElementById('confirmModal').style.display = 'block';
+        // Сохраняем идентификатор решения в атрибуте data для последующего использования при удалении
+        document.getElementById('confirmModal').setAttribute('data-solution-id', solutionId);
+    }
+
+    function closeModal() {
+        // Закрываем модальное окно
+        document.getElementById('confirmModal').style.display = 'none';
+    }
+
+    function deleteSolution() {
+        // Получаем идентификатор решения из атрибута data
+        var solutionId = document.getElementById('confirmModal').getAttribute('data-solution-id');
+        // Отправляем запрос на удаление решения с использованием полученного идентификатора
+        // Например, можно использовать AJAX для отправки запроса на сервер
+        // После успешного удаления закрываем модальное окно
+        closeModal();
+    }
+</script>
 
 </body>
 </html>
