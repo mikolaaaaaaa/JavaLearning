@@ -13,7 +13,7 @@ public class ChatGptClient {
     public String executeQuery(String prompt) {
         OkHttpClient client = new OkHttpClient();
 
-        String apiKey = "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";
+        String apiKey = "";
 
         MediaType mediaType = MediaType.parse("application/json");
         RequestBody body = RequestBody.create(mediaType, "{\"prompt\": \"" + prompt + "\"}");

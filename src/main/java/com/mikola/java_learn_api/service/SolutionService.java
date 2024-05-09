@@ -1,6 +1,6 @@
 package com.mikola.java_learn_api.service;
 
-import com.mikola.java_learn_api.client.MockChatGptClient;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.mikola.java_learn_api.dto.SolutionDto;
 import com.mikola.java_learn_api.entity.Solution;
 import com.mikola.java_learn_api.exception.NotFoundException;
@@ -17,12 +17,14 @@ import java.util.Optional;
 public class SolutionService {
     private final SolutionRepository solutionRepository;
     private final SolutionMapper solutionMapper;
+    private final GigaChatService gigaChatService;
 
 
-    public void checkSolution(Long solutionId) {
+    public void checkSolution(Long solutionId) throws JsonProcessingException {
         Optional<Solution> optionalSolution = solutionRepository.findById(solutionId);
         SolutionDto solution = solutionMapper.toDto(optionalSolution.orElseThrow(() -> new NotFoundException("")));
-        String feedback = MockChatGptClient.executeQuery(solution.getCode());
+        //String feedback = MockChatGptClient.executeQuery(solution.getCode());
+        String feedback = gigaChatService.getAnswer(solution.getCode());
         solution.setFeedback(feedback);
         solutionRepository.save(solutionMapper.toEntity(solution));
     }

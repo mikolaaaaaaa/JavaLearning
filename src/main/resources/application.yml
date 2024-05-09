@@ -15,9 +15,19 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: off
+  cloud:
+    openfeign:
+      okhttp:
+        enabled: true
+      httpclient:
+        disable-ssl-validation: true
 
 springdoc:
   swagger-ui:
     path: /swagger-ui
     tags-sorter: alpha
     operations-sorter: alpha
+
+gigachat:
+  scope: GIGACHAT_API_PERS
+  model: GigaChat:latest

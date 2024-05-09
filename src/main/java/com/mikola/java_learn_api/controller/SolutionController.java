@@ -1,5 +1,6 @@
 package com.mikola.java_learn_api.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.mikola.java_learn_api.dto.SolutionDto;
 import com.mikola.java_learn_api.mapper.SolutionMapper;
 import com.mikola.java_learn_api.service.SolutionService;
@@ -53,7 +54,7 @@ public class SolutionController {
 
     @PostMapping("/check/{solutionId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void checkSolution(@PathVariable Long solutionId) {
+    public void checkSolution(@PathVariable Long solutionId) throws JsonProcessingException {
         solutionService.checkSolution(solutionId);
     }
 }

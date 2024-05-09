@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+
 @Controller
 @RequestMapping("/tasks")
 @RequiredArgsConstructor
@@ -30,7 +32,7 @@ public class TaskController {
     }
 
     @PostMapping("/submit")
-    public String submitTask(@ModelAttribute TaskDto taskDto, Model model) {
+    public String submitTask(@ModelAttribute TaskDto taskDto, Model model) throws UnsupportedEncodingException {
         System.out.println("Received task: " + taskDto);
         model.addAttribute("chackResult", "test data");
         var solution = solutionService.addSolution(taskDto);

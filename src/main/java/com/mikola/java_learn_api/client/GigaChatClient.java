@@ -2,7 +2,6 @@ package com.mikola.java_learn_api.client;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mikola.java_learn_api.dto.TaskDto;
 import com.mikola.java_learn_api.request.ChatCompletionRequest;
 import com.mikola.java_learn_api.service.GigaChatService;
@@ -15,8 +14,6 @@ import org.springframework.stereotype.Component;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
 @RequiredArgsConstructor
@@ -30,18 +27,28 @@ public class GigaChatClient {
     }
 
     public String makeRequest(TaskDto task) throws JsonProcessingException {
-        chatCompletionRequest.setMessages(gigaChatService.generateMessagesForCheckTask(task));
-
-        Map<String,String> headers = new HashMap<>(ChatCompletionRequest.headers);
-        headers.put("Authorization","eyJjdHkiOiJqd3QiLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.L_jz_MrSrS7zkaqcDY0t8hj7ahlcuOkOTJvO6_ry_q35b9vX0CFuu5nCGyhdtpADnsIQe1W8la856LhVNChB6BSKkFb9SYvpbKbX41T7MiHJzHYeGHw7RkKT1p-0kZH1kLrGE1i0NIKxB1jlaSXcNc0E1eDXYWpIdEvEaFuRfPOdXZ_-3GaGK3E5enayMcL_hi0hAqgJXLzqHC5gxre29x-M_i-y9jVEQPtZuhl80Vp5K8Hm5mR2G89IvK6_TLxhy8F99g2n5B-jtKo17-qr5QiCcQOm1tBuBSXoloENgBq1Z1Xj3m4eKXeYX2g7Zhzevm9ar8lwAnrWh5_YIeRfmw.rK7KuHC0c2QEp3jcWLZEVA.JPZoYzsF0vRr24r963nwivHFf5Z3nDkOCSH9yUb5hVIp5b3UMavnNt5jy3hqFPMNa44uxhLd6SfbD3vC-a1JMXsWB-B1JZg-UTmMI3yJWoMoGgTl6MmBl5Gaa_S-lQlYSTE2P9mzvpwGmI08k_BVERprYAcr4xYpm2PIPSGnx3FNf0U3hLAAMVM6HlQoIqU23ovcMWaBrR6cBOdb82yOAfFGMXXaXeINZ1ZRS8dBzKlSWX8gEjaTyrc5hF3mxpSFd8cNBwiMXtPIofusG7ukDjaV4hdDcOQ4UkIg8rtPK5PRQ0S5YKZcOvXdyzdC3Q4fsZWF7KZooCOR-OXCuJICrzPbW050K2zFfmkwp8PyoDDshODLG8yTE6e3BqU_LnIWEBZfe84zggUaXpc2632NS987NELI4dGXnTeVZDNZYoon2S48VaMRhR8K0X-BXoDsZHZYwfdCljjcGt82XC5JbKrL2i4TB81h-hBwG5ySEbJDDNSVU31bY_E51DJVmnS5BX9_eYas-JW-qApLhGEhD95Fd91DzF0U1ZvzXlVaJ7vU1lTlMwlzym_lzSIN1ZPkgj5Y-j1dGfxoB7pGXqOZvTzPd8WgmDxyERKEwWkacu4q9pjc5yTLMZ6-KmGDbAP5D4bXNuNwJLgWZ3bid9pMKggT3ahGYsTXSl7II0V4OLOTsUNZXAIXSDhjKufrljtoJA7Zv9TVpWYa7XI-4MOTCKPRnbB-hlTQ1huDSjgLIYg.NUw7Z6gZqbl2VlJna6rmRvNi91YfS0Gwyqcvy-DLu30");
-        //add access token refresh
-        HttpResponse<JsonNode> response = Unirest.post(ChatCompletionRequest.baseUrl + "/chat/completions")
-                .headers(headers)
-                .body( new ObjectMapper().writeValueAsString(chatCompletionRequest))
-                .asJson();
-
-        System.out.println(response);
-        return response.getBody().toString();
+//        chatCompletionRequest.setMessages(gigaChatService.generateMessagesForCheckTask(task));
+//
+//        Map<String,String> headers = new HashMap<>(ChatCompletionRequest.headers);
+//        ObjectMapper objectMapper = new ObjectMapper();
+//
+//        headers.put("Authorization","Bearer " + "eyJjdHkiOiJqd3QiLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.jtrc--KDuQ29Vf1xKONY8ttlUzTU0CogOuU7o9Xz0wcxH3FA_4wM9S03vdYNopKdymvQvCNQaL73QHGkhycvvxyUnJkxZ36n2H7KpXIag9wgujY9mcKlNAlQMKCRmNacs-ls6HuKf77S-Nr4qMGPg5Y4PGWN8M-CjJI41DwBxnvxFNxKGQu7Oxc1-pQVau85nNviUapnePf6aPZixfXas3ydWM9kGjBkcksFHDZQywZtE7m69tTVC5a1BXrQy-9wurmxshGOsmfAfDYLAYNo98nCzCHCFLlu1OeW1v7Q29lqOGvJwdKGKKKIFAHxbtQsRs7nkxnJtikgQNOgt618ew.Vp8U6ulce_MlcZLfKBNx-Q.yrgosVPUeABVitx1b2s3qBZMkLIg71CAy-OLhEt83HEuyPL2zz_xu5jme2SCZxMqYpts2iuA4D8oBcZjgoBDeP4Eg8DTdbAV64xKLnb7h4yE79zFV9pHb7TYqy55hkDaFQDKpM47GPvkbNagdiXfuOpikBPM0qlJnzTS3kK4kBfoG1mhInr4w65MKBAPScR7h--suyme1syYvJvFrUisl5Zd-UBiFiDOcUHi0hWrKhGPylgzK0ShlEeof4aFbGCrH2IT6bXTeo--T9iVdb7oJ_HjgI95rMQkJgZ-XC5zK11ADcOgClb19tPwRpz6DZXJ3sq7JLhLDzIDUDSNcVgkArQU18V4djVg39j-2CVWVa-GPw1BMC7IIV5jT6Rw4I6vOHQuq4lUIRVelVx9uzOikhwJMN-V0nlvlO7EdLvD_XTERnKGUhHlV2nwtCUKKDVemUD5-EIWb6Qk_L3yIbMNOLb2n4SrtrbmQqxoHvSGUzvFnBTxr7n_TBGrWAbzbHLnbiAPFkQ9IJaVzZSS6pi7LqqI0wzd9MqakT9rZ17ub1ySiIdDKDIoGiqdN_GS87JL95Zoz14-1NhnuxRIlx1gUzQadEyh4rHGBMw73Iu9TGsBn5mzSV8QJaNhk-mVAuTfK0KtnKLUroKsWrgl88rZq4KWlyDcayUeo0LTeDUgRSFBOIDHthfRRYlslHwizx4Z3Qje-FcrM2rsw2PbGTnzN2L5EvX9zqfk3Ajovk0mjgk.cb4MjRXfVkH2ysP5CfqLdfZi1LDlcPBFD5O5ykrJu2E");
+//        System.out.println(headers);
+//        System.out.println(JsonEscapeUtil.jsonEscapeString(objectMapper.writeValueAsString(chatCompletionRequest)));
+//        //add access token refresh
+//        HttpResponse<JsonNode> response = Unirest.post(ChatCompletionRequest.baseUrl + "/chat/completions")
+//                .headers(headers)
+//                .body(JsonEscapeUtil.jsonEscapeString(objectMapper.writeValueAsString(chatCompletionRequest)))
+//                .asJson();
+//
+////        var response = Unirest.post(ChatCompletionRequest.baseUrl)
+////                .header("Content-Type", "application/json")
+////                .header("Authorization", "Bearer eyJjdHkiOiJqd3QiLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.jtrc--KDuQ29Vf1xKONY8ttlUzTU0CogOuU7o9Xz0wcxH3FA_4wM9S03vdYNopKdymvQvCNQaL73QHGkhycvvxyUnJkxZ36n2H7KpXIag9wgujY9mcKlNAlQMKCRmNacs-ls6HuKf77S-Nr4qMGPg5Y4PGWN8M-CjJI41DwBxnvxFNxKGQu7Oxc1-pQVau85nNviUapnePf6aPZixfXas3ydWM9kGjBkcksFHDZQywZtE7m69tTVC5a1BXrQy-9wurmxshGOsmfAfDYLAYNo98nCzCHCFLlu1OeW1v7Q29lqOGvJwdKGKKKIFAHxbtQsRs7nkxnJtikgQNOgt618ew.Vp8U6ulce_MlcZLfKBNx-Q.yrgosVPUeABVitx1b2s3qBZMkLIg71CAy-OLhEt83HEuyPL2zz_xu5jme2SCZxMqYpts2iuA4D8oBcZjgoBDeP4Eg8DTdbAV64xKLnb7h4yE79zFV9pHb7TYqy55hkDaFQDKpM47GPvkbNagdiXfuOpikBPM0qlJnzTS3kK4kBfoG1mhInr4w65MKBAPScR7h--suyme1syYvJvFrUisl5Zd-UBiFiDOcUHi0hWrKhGPylgzK0ShlEeof4aFbGCrH2IT6bXTeo--T9iVdb7oJ_HjgI95rMQkJgZ-XC5zK11ADcOgClb19tPwRpz6DZXJ3sq7JLhLDzIDUDSNcVgkArQU18V4djVg39j-2CVWVa-GPw1BMC7IIV5jT6Rw4I6vOHQuq4lUIRVelVx9uzOikhwJMN-V0nlvlO7EdLvD_XTERnKGUhHlV2nwtCUKKDVemUD5-EIWb6Qk_L3yIbMNOLb2n4SrtrbmQqxoHvSGUzvFnBTxr7n_TBGrWAbzbHLnbiAPFkQ9IJaVzZSS6pi7LqqI0wzd9MqakT9rZ17ub1ySiIdDKDIoGiqdN_GS87JL95Zoz14-1NhnuxRIlx1gUzQadEyh4rHGBMw73Iu9TGsBn5mzSV8QJaNhk-mVAuTfK0KtnKLUroKsWrgl88rZq4KWlyDcayUeo0LTeDUgRSFBOIDHthfRRYlslHwizx4Z3Qje-FcrM2rsw2PbGTnzN2L5EvX9zqfk3Ajovk0mjgk.cb4MjRXfVkH2ysP5CfqLdfZi1LDlcPBFD5O5ykrJu2E")
+////                .body("{\n  \"model\": \"GigaChat:latest\", \n  \"temperature\": 0.87, \n  \"top_p\": 0.47, \n  \"n\": 1, \n  \"max_tokens\": 512, \n  \"repetition_penalty\": 1.07, \n  \"stream\": false, \n  \"update_interval\": 0, \n  \"messages\": [\n        {\n            \"role\": \"system\", \n            \"content\": \"Отвечай как научный сотрудник\"\n        },\n        {\n            \"role\": \"user\", \n            \"content\": \"Напиши 5 вариантов названий для космической станции\"\n        }\n\n    ]\n}")
+////                .asString();
+//
+//        System.out.println(response.getStatus());
+        return gigaChatService.getAnswer("Hello robot");
     }
 
     public HttpResponse<JsonNode> getAccessToken() throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException {
