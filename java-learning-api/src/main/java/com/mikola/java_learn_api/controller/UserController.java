@@ -26,12 +26,6 @@ public class UserController {
         return users.stream().map(userMapper::toDto).toList();
     }
 
-//    @GetMapping("/login")
-//    public Optional<UserDto> login() {
-//        List<User> users = userService.getAllUsers();
-//        return users.stream().map(userMapper::toDto).toList();
-//    }
-
     @GetMapping("/{userId}")
     public UserDto getUserById(@PathVariable Long userId) {
         return userMapper.toDto(userService.getUserById(userId));

@@ -22,7 +22,7 @@ public class UserService {
     }
 
     public User getUserById(Long userId) {
-        Optional<User> userOptional = userRepository.findById(userId);
+        var userOptional = userRepository.findById(userId);
         return userOptional
                 .orElseThrow(() -> new NotFoundException("User with ID " + userId + " not found"));
     }
@@ -43,8 +43,8 @@ public class UserService {
     }
 
     public User updateUser(UserDto updatedUserDto) {
-        Optional<User> userOptional = userRepository.findById(updatedUserDto.getId());
-        User user = userOptional.orElseThrow(() -> new NotFoundException("User with ID " + updatedUserDto.getId() + " not found"));
+        var userOptional = userRepository.findById(updatedUserDto.getId());
+        var user = userOptional.orElseThrow(() -> new NotFoundException("User with ID " + updatedUserDto.getId() + " not found"));
 
         user.setName(updatedUserDto.getName());
         user.setEmail(updatedUserDto.getEmail());

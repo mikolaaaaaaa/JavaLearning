@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,10 +20,9 @@ public class SolutionService {
 
 
     public void checkSolution(Long solutionId) throws JsonProcessingException {
-        Optional<Solution> optionalSolution = solutionRepository.findById(solutionId);
-        SolutionDto solution = solutionMapper.toDto(optionalSolution.orElseThrow(() -> new NotFoundException("")));
-        //String feedback = MockChatGptClient.executeQuery(solution.getCode());
-        String feedback = gigaChatService.getAnswer(solution.getCode());
+        var optionalSolution = solutionRepository.findById(solutionId);
+        var solution = solutionMapper.toDto(optionalSolution.orElseThrow(() -> new NotFoundException("")));
+        var feedback = gigaChatService.getAnswer(solution.getCode());
         solution.setFeedback(feedback);
         solutionRepository.save(solutionMapper.toEntity(solution));
     }

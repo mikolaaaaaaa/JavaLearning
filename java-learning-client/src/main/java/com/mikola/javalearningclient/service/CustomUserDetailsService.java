@@ -23,10 +23,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         var user = userService.getUserByEmail(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found with username: " + username);
-        }
-        // Возвращаем UserDetails, представляющий информацию о пользователе
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
                 new BCryptPasswordEncoder().encode("1"),
