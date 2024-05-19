@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b3286e1-69ae-437b-9343-4f45185a6baf" name="Changes" comment="[+] release 1.0.0" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mikolaaaaaaa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2f167efc-5b34-48d4-856f-f07863619b88" />
+        <option name="url" value="https://github.com/mikolaaaaaaa/JavaLearning.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2fH2pL2gtLth5LKXVgBsEwIXSEo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HttpsRequestPoster.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Docker.docker/docker-compose.yaml.postgres-java-learn: Compose Deployment.executor": "Run",
+    "Docker.docker/docker-compose.yaml.postgres: Compose Deployment.executor": "Run",
+    "Docker.docker/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "Maven.JavaLearnApi [package].executor": "Run",
+    "Maven.java-learning-client [clean].executor": "Run",
+    "Maven.java-learning-client [compile].executor": "Run",
+    "Maven.java-learning-client [install].executor": "Run",
+    "Maven.java-learning-client [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.JavaLearnApiApplication.executor": "Run",
+    "Spring Boot.JavaLearningClientApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/nickv/IdeaProjects/JavaLearning/src/main/resources/cacerts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "editor.preferences.import",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nickv\IdeaProjects\JavaLearning\src\main\resources\cacerts" />
+      <recent name="C:\Users\nickv\IdeaProjects\JavaLearning" />
+      <recent name="C:\Users\nickv\IdeaProjects\JavaLearning\java-learning-client\src\main\resources\static\img" />
+      <recent name="C:\Users\nickv\IdeaProjects\JavaLearning\java-learning-client\src\main\java\com\mikola\javalearningclient" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nickv\IdeaProjects\JavaLearning\java-learning-api" />
+      <recent name="C:\Users\nickv\IdeaProjects\JavaLearning\java-learning-client\src\main\resources\static\css" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.JavaLearningClientApplication">
+    <configuration name="HttpsRequestPoster" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mikola.java_learn_api.HttpsRequestPoster" />
+      <module name="JavaLearnApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mikola.java_learn_api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="JavaLearning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="JavaLearning" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaLearnApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="java-learning-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mikola.java_learn_api.JavaLearnApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaLearningApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="java-learning-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mikola.javalearningapi.JavaLearningApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaLearningClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="java-learning-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mikola.javalearningclient.JavaLearningClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker/docker-compose.yaml.postgres-java-learn: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="postgres-java-learn" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker/docker-compose.yaml.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="postgres" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HttpsRequestPoster" />
+        <item itemvalue="Docker.docker/docker-compose.yaml.postgres-java-learn: Compose Deployment" />
+        <item itemvalue="Docker.docker/docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="Docker.docker/docker-compose.yaml.postgres: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b3286e1-69ae-437b-9343-4f45185a6baf" name="Changes" comment="" />
+      <created>1713443863538</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713443863538</updated>
+      <workItem from="1713443864747" duration="3875000" />
+      <workItem from="1713699005993" duration="4280000" />
+      <workItem from="1713887618454" duration="6707000" />
+      <workItem from="1714057091767" duration="11297000" />
+      <workItem from="1714129264772" duration="11771000" />
+      <workItem from="1714299191825" duration="1747000" />
+      <workItem from="1714594706411" duration="7977000" />
+      <workItem from="1714730998292" duration="33259000" />
+      <workItem from="1715103186849" duration="7862000" />
+      <workItem from="1715252951005" duration="117000" />
+      <workItem from="1715600158931" duration="336000" />
+      <workItem from="1715600508978" duration="6342000" />
+      <workItem from="1716144011855" duration="1702000" />
+    </task>
+    <task id="LOCAL-00001" summary="[+] docker-compose.yaml&#10;[+] init script">
+      <option name="closed" value="true" />
+      <created>1713719988281</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713719988281</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[+] init client">
+      <option name="closed" value="true" />
+      <created>1713899703704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713899703704</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[+] pages">
+      <option name="closed" value="true" />
+      <created>1714072370265</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714072370265</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[+] security">
+      <option name="closed" value="true" />
+      <created>1714159894459</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714159894459</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[+] add solution">
+      <option name="closed" value="true" />
+      <created>1714605084889</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714605084889</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[+] add gigachat">
+      <option name="closed" value="true" />
+      <created>1714945441827</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714945441827</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[+] release 1.0.0">
+      <option name="closed" value="true" />
+      <created>1715253038985</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715253038985</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[+] release 1.0.0">
+      <option name="closed" value="true" />
+      <created>1716145276675</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716145276675</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[+] release 1.0.0">
+      <option name="closed" value="true" />
+      <created>1716145385876</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716145385876</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[+] docker-compose.yaml&#10;[+] init script" />
+    <MESSAGE value="[+] init client" />
+    <MESSAGE value="[+] pages" />
+    <MESSAGE value="[+] security" />
+    <MESSAGE value="[+] add solution" />
+    <MESSAGE value="[+] add gigachat" />
+    <MESSAGE value="[+] release 1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="[+] release 1.0.0" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/java-learning-client/src/main/java/com/mikola/javalearningclient/service/CustomUserDetailsService.java</url>
+          <line>23</line>
+          <properties class="com.mikola.javalearningclient.service.CustomUserDetailsService" method="loadUserByUsername">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
